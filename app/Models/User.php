@@ -22,20 +22,17 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'età',
-        'genere',
-        'stato civile',
+        'age',
+        'gender',
+        'marital status',
         'taste',
-        'giornali',
-        'macchina',
-        'film&musica',
+        'newspapers',
+        'car',
+        'movie&music',
         'city',
         'hobbies',
-        'attitudini',
-        'lavoro',
-        'is_admin',
-        'is_revisor',
-        'is_writer',
+        'attitudes',
+        
         
     ];
 
