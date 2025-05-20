@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $fillable = [
-        'titolo',
-        'sottotitolo',
-        'corpo del testo',
-        'immagine di copertina',
+        'title',
+        'subtitle',
+        'body',
+        'image',
         'user_id',
-        'categoria_id',
+        'category_id',
     ];
 
     public function user()
