@@ -30,11 +30,7 @@
         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Ciao {{Auth::user()->name}}
         </a>  <ul class="dropdown-menu">
-<<<<<<< HEAD
             <li class="dropdown-item"><a class="logout" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();" >Logout</a>
-=======
-            <li class="dropdown-item"><a class="login"  href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();" >Logout</a>
->>>>>>> 2aa4fb0860076af5bcc557163e47d02773fc03f4
             </li>
           <form action="{{ route('logout') }}" method='POST' id='form-logout' class='d-none'>
             @csrf
