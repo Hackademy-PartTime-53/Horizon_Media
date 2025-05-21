@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
@@ -10,3 +11,5 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('auth', RegisterController::class)->middleware(['auth']);
 Route::resource('auth', LoginController::class)->middleware(['auth']);
 Route::resource('auth', LogoutController::class)->middleware(['auth']);
+Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
+Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');

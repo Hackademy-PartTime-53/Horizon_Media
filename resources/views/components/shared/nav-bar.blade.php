@@ -36,6 +36,10 @@
           <form action="{{ route('logout') }}" method='POST' id='form-logout' class='d-none'>
             @csrf
           </form>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{route('article.create')}}">Crea articolo</a>
+        </li>
+
         </ul>
       </li>
       @endauth
