@@ -33,7 +33,6 @@ class User extends Authenticatable
         'hobbies',
         'attitudes',
         
-        
     ];
 
     /**
