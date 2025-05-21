@@ -31,8 +31,8 @@ class User extends Authenticatable
         'movie&music',
         'city',
         'hobbies',
-        'attitudes',
-        
+        'attitudes',  
+        'job',    
     ];
 
     /**
