@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('newspapers');
             $table->string('car');
             $table->string('movie&music');
-            $table->string('city');
+            $table->string('sites');
             $table->string('hobbies');
             $table->string('attitudes');
             $table->string('job');
@@ -32,7 +32,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn(['age','gender','marital status','taste','newspapers','car','movie&music','city','hobbies','attitudes','job']);
+            $table->dropColumn(['age','gender','marital status','taste','newspapers','car','movie&music','sites','hobbies','attitudes','job']);
         });
     }
 };

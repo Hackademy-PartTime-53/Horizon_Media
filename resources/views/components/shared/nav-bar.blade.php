@@ -16,6 +16,7 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Menù
           </a>
+          @guest
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
             <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
@@ -24,6 +25,22 @@
           </ul>
         </li>
       </ul>
+      @endguest
+      @auth
+      <li class="dropdown-menù">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Ciao {{Auth::user()->name}}
+          </a>
+        <ul>
+            <li><a class="dropdown-item" href="#" >Logout</a>
+            </li>
+          <form action="{{ route(logout) }}" method='POST' id='form-logout' class='d-none'>
+            @csrf
+          </form>
+        </ul>
+      </li>
+      @endauth
+      
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Search</button>

@@ -29,7 +29,7 @@ class User extends Authenticatable
         'newspapers',
         'car',
         'movie&music',
-        'city',
+        'sites',
         'hobbies',
         'attitudes',  
         'job',    
