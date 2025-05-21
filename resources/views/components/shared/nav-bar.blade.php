@@ -26,22 +26,27 @@
       </ul>
       @endguest
       @auth
-      <li class="dropdown-menù">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      
+      
+      
+
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Ciao {{Auth::user()->name}}
-          </a>
-        <ul>
-            <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();" >Logout</a>
+        </a>  <ul class="dropdown-menu">
+            <li class="dropdown-item"><a  href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();" >Logout</a>
             </li>
           <form action="{{ route('logout') }}" method='POST' id='form-logout' class='d-none'>
             @csrf
           </form>
-          <li class="nav-item">
+          <li class="dropdown-item " >
           <a class="nav-link active" aria-current="page" href="{{route('article.create')}}">Crea articolo</a>
         </li>
-
         </ul>
-      </li>
+        </li>
+       
+        
+        
+      
       @endauth
       
       <form class="d-flex" role="search">
