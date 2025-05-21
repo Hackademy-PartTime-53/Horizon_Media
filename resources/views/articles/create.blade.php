@@ -1,4 +1,5 @@
-<x-main-layout><x-slot:title>Crea Articolo</x-slot:title>
+<x-main-layout>
+    <x-slot:title>Crea Articolo</x-slot:title>
 <div class="container-fluid p-5 bg-primary text-center">
         <div class="row justify-content-center">
             <div class="col-12">
@@ -9,7 +10,7 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-8">
-                <form method="POST" action="{{route('article.store')}}" enctype="multipart/form-data">
+                <form method="POST" action="{{route('article.store')}}" enctype="multipart/form-data" class="card p-5 shadow ">
                     @csrf
                         <div class="mb-3">
                         <label for="title" class="form-label">Titolo</label>

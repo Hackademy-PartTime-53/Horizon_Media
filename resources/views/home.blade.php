@@ -1,6 +1,12 @@
 <x-main-layout>
 
 <x-slot:title>Home</x-slot:title>
+@if(session('message'))
+    <div class="alert alert-success">
+    {{ session('message') }}
+    </div>
+@endif
+
 
 <div class="container-fluid p-5 bg-secondary-subtle text-center">
 <div class="row justify-content-center">
