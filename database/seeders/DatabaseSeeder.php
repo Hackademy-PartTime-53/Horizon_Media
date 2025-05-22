@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
         ]);
 
+        $this->call([
+            ArticleSeeder::class,
+        ]);
+
        
     }
 }
