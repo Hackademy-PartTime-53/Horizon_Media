@@ -1,6 +1,12 @@
 <x-main-layout>
+<<<<<<< HEAD
+    <x-slot name="title">
+        Articoli
+    </x-slot>
+=======
     <x-slot name="title">Articoli</x-slot>
 
+>>>>>>> bc43696354b8e6d5237b6cd88370609d4f663100
 <div class="container my-5">
         <div class="row justify-content-evenly">
             @foreach ($articles as $article)
