@@ -16,4 +16,6 @@
 </div>
 </div>
 
+<x.shared-card />
+
 </x-main-layout>

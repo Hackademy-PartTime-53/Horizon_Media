@@ -16,6 +16,8 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Benvenuto
           </a>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('article.index')}}">Tutti i nostri articoli</a></li>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
             <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
