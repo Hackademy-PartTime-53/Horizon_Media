@@ -1,7 +1,7 @@
 <x-main-layout>
 
 <x-slot:title>Home</x-slot:title>
-<h1>ciaociao</h1>
+
 @if(session('message'))
     <div class="alert alert-success">
     {{ session('message') }}
