@@ -1,6 +1,6 @@
 <x-main-layout>
     <x-slot name="title"> Articoli </x-slot>
-        <x-layout>
+    
     <div class="container-fluid p-5 bg-secondary-subtle text-center">
         <div class="row justify-content-center">
             <div class="col-12">
@@ -17,7 +17,10 @@
                 <div class="text-center">
                     <h2>{{ $article->subtitle }}</h2>
                     <p class="fs-5">Categoria:
-                        <a href="#" class="text-capitalize fw-bold text-muted">{{ $article->category->name }}</a>
+                        <a href="{{ route('article.byCategory', $article->category) }}" class="text-capitalize fw-bold text-muted">{{ $article->category->name }}</a>
+                    </p>
+                    <p class="fs-5">Redattore:
+                        <a href="{{ route('article.byUser', $article->user) }}" class="text-capitalize fw-bold text-muted">{{ $article->user->name }}</a>
                     </p>
                 </div>
                 <div class="text-muted my-3">

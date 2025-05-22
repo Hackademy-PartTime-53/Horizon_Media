@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class ArticleController extends Controller implements HasMiddleware
 {
     public static function middleware()
     {
-        return[new Middleware('auth', except: ['index', 'show'] )];
+        return[new Middleware('auth', except: ['index', 'show', 'byCategory', 'byUser'] )];
     }
     /**
      * Display a listing of the resource.
@@ -88,6 +89,17 @@ class ArticleController extends Controller implements HasMiddleware
     public function destroy(Article $article)
     {
         //
+    }
+    public function byCategory(Category $category)
+    {
+         $articles = $category->articles()->orderBy('created_at', 'desc')->get();
+         return view('article.by-category', compact('category','articles'));
+    }
+
+    public function byUser(User $user)
+    {
+        $articles = $user->articles()->oredBy('created_at', 'name')->get();
+        return view('article.by-user', compact('user', 'articles'));
     }
     
 }
