@@ -2,7 +2,6 @@
     <x-slot name="title">
         Articoli
     </x-slot>
-
 <div class="container my-5">
         <div class="row justify-content-evenly">
             @foreach ($articles as $article)
