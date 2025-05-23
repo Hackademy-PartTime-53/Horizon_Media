@@ -17,6 +17,6 @@
 </div>
 </div>
 
-<x.shared-card />
+<x-shared.card  :articles="$articles"/>
 
 </x-main-layout>
