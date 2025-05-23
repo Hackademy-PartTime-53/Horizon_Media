@@ -11,4 +11,9 @@ class HomeController extends Controller
         $articles = Article::orderBy('created_at', 'desc')->take(4)->get();
         return view('home', compact('articles'));
     }
+    public function render()
+    {
+    return view('components.hero-section-title');
+    }
+
 }

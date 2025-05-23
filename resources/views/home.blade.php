@@ -1,6 +1,11 @@
 <x-main-layout>
-
 <x-slot:title>Home</x-slot:title>
+{{-- Hero con carousel --}}
+  <x-hero-section 
+     :articles="$articles"
+     backgroundImage="{{ asset('storage/images/horizon_cover.jpg') }}" 
+  />
+
 
 @if(session('message'))
     <div class="alert alert-success">
