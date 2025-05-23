@@ -14,7 +14,9 @@ class ArticleController extends Controller implements HasMiddleware
 {
     public static function middleware()
     {
-        return[new Middleware('auth', except: ['index', 'show', 'byCategory', 'byUser'] )];
+        return [
+            new Middleware('auth', except: ['index', 'show', 'byCategory', 'byUser'] )
+        ];
     }
     /**
      * Display a listing of the resource.
@@ -43,8 +45,9 @@ class ArticleController extends Controller implements HasMiddleware
         'title' => 'required|unique:articles|min:5',
         'subtitle' => 'required|min:5',
         'body' => 'required|min:10',
-        'image' => 'required|image',
-        'category' => 'required',
+        'image' => 'required|mimes:jpg,jpeg,png|max:2048',
+        'category_id' => 'required',
+        'user_id'=>'required|exists:categories,id',
     ]);
 
     $article = Article::create([
@@ -52,7 +55,7 @@ class ArticleController extends Controller implements HasMiddleware
         'subtitle' => $request->subtitle,
         'body' => $request->body,
         'image' => $request->file('image')->store('images', 'public'),
-        'category_id' => $request->category,
+        'category_id' => $request->category_id,
         'user_id' => Auth::user()->id,
     ]);
 
@@ -98,7 +101,7 @@ class ArticleController extends Controller implements HasMiddleware
 
     public function byUser(User $user)
     {
-        $articles = $user->articles()->oredBy('created_at', 'name')->get();
+        $articles = $user->articles()->orderBy('created_at', 'desc')->get();
         return view('article.by-user', compact('user', 'articles'));
     }
     

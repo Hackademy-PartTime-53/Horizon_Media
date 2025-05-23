@@ -1,5 +1,5 @@
 <x-main-layout>
-    <x-slot name="title"> Articoli </x-slot>
+    <x-slot name="title"> articolo </x-slot>
     
     <div class="container-fluid p-5 bg-secondary-subtle text-center">
         <div class="row justify-content-center">
