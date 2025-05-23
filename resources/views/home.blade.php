@@ -1,5 +1,7 @@
 <x-main-layout>
 <x-slot:title>Home</x-slot:title>
+
+
 {{-- Hero con carousel --}}
   <x-hero-section 
      :articles="$articles" />

@@ -18,7 +18,8 @@ class ArticleSeeder extends Seeder
         'title'=> 'L\'impatto dell\' Intelligenza sul lavoro futuro' ,
         'subtitle'=> 'Come le tecnologie emergenti stanno trasformando il mondo professionale ',
         'body'=>'negli ultimi anni , l\'intelligenza artificiale (ha rivoluzionato diversi settori.)',
-        'image'=>"storage/app/public/pexels-cottonbro-8721318.jpg",
+        'image'=>"IA.jpg",
+        'user_id'=>1,
         'category_id'=>6,
 
     ]);
@@ -28,7 +29,8 @@ class ArticleSeeder extends Seeder
         'title'=> 'Olimpiadi Milano Cortina 2026 - caos trasporti' ,
         'subtitle'=> 'Grandi problemi sui trasporti',
         'body'=>'Purtroppo sulle olimpiadi non abbiamo molte cose da dire. Il sistema di territorio si è mosso con grave ritardo, solo all\'ultimo anno, il tavolo sulla mobilità si sta muovendo. Parole importanti pronunciate da Gabriele Mariani. ',
-        'image'=>"storage/app/public/Cerchi-Olimpiadi-su-Ghiaccio.jpg",
+        'image'=>"Olimpiadi.jpg",
+        'user_id'=>1,
         'category_id'=>4,
 
     ]);
@@ -37,7 +39,8 @@ class ArticleSeeder extends Seeder
         'title'=> 'Avengers' ,
         'subtitle'=> 'Avangers: Doomsday e Secret Wars posticipano la data di uscita al cinema',
         'body'=>'Disney sta apportando delle modifiche al suo calendario di uscita, posticipando entrambi i progetti Marvel',
-        'image'=>"storage/app/public/pexels-cottonbro-8721318.jpg",
+        'image'=>"pexels-cottonbro-8721318.jpg",
+        'user_id'=>1,
         'category_id'=>5,
 
     ]);
