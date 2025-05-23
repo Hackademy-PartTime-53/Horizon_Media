@@ -14,7 +14,7 @@
                 <h5 class="card-title">{{ $article->title }}</h5>
                 <p class="card-text">{{ $article->subtitle }}</p>
                 <a href="{{ route('article.show', $article) }}" 
-                   class="btn btn-outline-light btn-sm">
+                   class="btn btn-success btn-sm">
                   Leggi
                 </a>
               </div>

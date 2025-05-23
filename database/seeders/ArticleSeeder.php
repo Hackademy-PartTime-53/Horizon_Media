@@ -39,7 +39,7 @@ class ArticleSeeder extends Seeder
         'title'=> 'Avengers' ,
         'subtitle'=> 'Avangers: Doomsday e Secret Wars posticipano la data di uscita al cinema',
         'body'=>'Disney sta apportando delle modifiche al suo calendario di uscita, posticipando entrambi i progetti Marvel',
-        'image'=>"pexels-cottonbro-8721318.jpg",
+        'image'=>"Avengers.jpg",
         'user_id'=>1,
         'category_id'=>5,
 
