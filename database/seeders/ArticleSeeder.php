@@ -28,7 +28,7 @@ class ArticleSeeder extends Seeder
         'title'=> 'Olimpiadi Milano Cortina 2026 - caos trasporti' ,
         'subtitle'=> 'Grandi problemi sui trasporti',
         'body'=>'Purtroppo sulle olimpiadi non abbiamo molte cose da dire. Il sistema di territorio si è mosso con grave ritardo, solo all\'ultimo anno, il tavolo sulla mobilità si sta muovendo. Parole importanti pronunciate da Gabriele Mariani. ',
-        'image'=>"storage/app/public/pexels.jpg",
+        'image'=>"storage/app/public/Cerchi-Olimpiadi-su-Ghiaccio.jpg",
         'category_id'=>4,
 
     ]);

@@ -24,7 +24,7 @@
 
            <div class="carousel-item @if($idx === 0) active @endif">
             <div class="card bg-transparent border-0 text-white">
-              <img src="{{ asset('storage/pexels-cottonbro-8721318.jpg') }}" 
+              <img src="{{ asset('storage/Cerchi-Olimpiadi-su-Ghiaccio.jpg') }}" 
                    class="card-img" 
                    alt="{{ $article->title }}">
               <div class="card-img-overlay d-flex flex-column justify-content-end">
