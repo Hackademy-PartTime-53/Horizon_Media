@@ -18,8 +18,7 @@ class ArticleSeeder extends Seeder
         'title'=> 'impatto dellintelligenza sul lavoro futuro' ,
         'subtitle'=> 'Come le tecnologie emergenti stanno trasformando il mondo professionale ',
         'body'=>'negli ultimi anni , lintelligenza artificiale (ha rivoluzionato diversi settori.)',
-        'image'=>"storage/app/public/images/horizon_cover.jpg",
-        'user_id'=>1,
+        'image'=>"storage/app/public/w800_h600_csmart_u1674552943.jpeg",
         'category_id'=>6,
 
     ]);

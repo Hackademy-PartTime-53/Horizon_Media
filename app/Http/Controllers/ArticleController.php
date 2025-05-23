@@ -49,6 +49,8 @@ class ArticleController extends Controller implements HasMiddleware
         'category_id' => 'required',
         'user_id'=>'required|exists:categories,id',
     ]);
+$path = $request->file('image')->store('images', 'public');
+
 
     $article = Article::create([
         'title' => $request->title,

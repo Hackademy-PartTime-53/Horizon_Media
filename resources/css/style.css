@@ -2,3 +2,15 @@
     text-decoration: none;
     color: black;
 }
+
+.herosec{
+    z-index: 1;
+    background-color: rgba(0,0,0,0.4);
+    height: 70vh;
+    position:fixed
+}
+
+.car{
+    z-index: 2;
+    margin-top: 200px;
+}

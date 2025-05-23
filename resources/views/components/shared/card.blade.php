@@ -1,4 +1,4 @@
-@props(['articles'])
+
 
 <div class="container my-5">
         <div class="row justify-content-evenly">
