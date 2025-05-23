@@ -3,11 +3,13 @@
  
 <div class="herosec position-relative w-100" >
   {{-- Immagine di sfondo --}}
-  <img src="{{ asset('storage/photo_5872935356133918389_y.jpg') }}" 
+  <img src="/storage/app/public/HorizonMedia.png" 
        class="w-100 h-100 object-fit-cover" 
-       alt="Hero background">
+       alt="">
 
   {{-- Overlay scuro per miglior contrasto --}}
+
+
 
 
  

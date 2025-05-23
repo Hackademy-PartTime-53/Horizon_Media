@@ -12,17 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('age');
-            $table->string('gender');
-            $table->string('marital status');
-            $table->string('taste');
-            $table->string('newspapers');
-            $table->string('car');
-            $table->string('movie&music');
-            $table->string('sites');
-            $table->string('hobbies');
-            $table->string('attitudes');
-            $table->string('job');
+            $table->string('age')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('marital status')->nullable();
+            $table->string('taste')->nullable();
+            $table->string('newspapers')->nullable();
+            $table->string('car')->nullable();
+            $table->string('movie&music')->nullable();
+            $table->string('sites')->nullable();
+            $table->string('hobbies')->nullable();
+            $table->string('attitudes')->nullable();
+            $table->string('job')->nullable();
                   });
     }
 
