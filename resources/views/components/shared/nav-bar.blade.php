@@ -11,6 +11,20 @@
            <li> 
            <a class="nav-link active " aria-current="page" href="{{route('article.index')}}">Tutti i nostri articoli</a></li>
         </li>
+        <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+        Le nostre categorie
+    </a>
+    <ul class="dropdown-menu">
+        @foreach(\App\Models\Category::all() as $category)
+            <li>
+                <a class="dropdown-item" href="{{ route('article.byCategory', $category->id) }}">
+                    {{ $category->name }}
+                </a>
+            </li>
+        @endforeach
+    </ul>
+</li>
         @guest
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
