@@ -47,21 +47,27 @@ class ArticleController extends Controller implements HasMiddleware
         'body' => 'required|min:10',
         'image' => 'required|mimes:jpg,jpeg,png|max:2048',
         'category_id' => 'required',
-        'user_id'=>'required|exists:categories,id',
+        // 'user_id'=>'required|exists:categories,id',
     ]);
 $path = $request->file('image')->store('images', 'public');
 
 
-    $article = Article::create([
-        'title' => $request->title,
-        'subtitle' => $request->subtitle,
-        'body' => $request->body,
-        'image' => $request->file('image')->store('images', 'public'),
-        'category_id' => $request->category_id,
-        'user_id' => Auth::user()->id,
-    ]);
+         $article = Article::create([
+         'title' => $request->title,
+         'subtitle' => $request->subtitle,
+         'body' => $request->body,
+         'image' => $request->file('image')->store('images', 'public'),
+         'category_id' => $request->category_id,
+         'user_id' => Auth::user()->id,
+     ]);
 
-    return redirect(route('home'))->with('message', 'Articolo creato con successo');
+    // if ($request->hasFile('image')) {
+    //     $image = $request->file('image')->store('image','public');
+    //     $validate['image'] = $path;
+    //     }
+       
+        return redirect()->route('article.index')->with('success','Articolo Creato !');
+
 }
 
     /**

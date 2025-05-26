@@ -37,8 +37,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="category" class="form-label">Categoria</label>
-                        <select name="category" id="category" class="form-control">
+                        <label for="category_id" class="form-label">Categoria</label>
+                        <select name="category_id" id="category" class="form-control">
                             @foreach ($categories as $category)
                                 <option value="{{$category->id}}"> {{$category->name}}</option>
                             @endforeach

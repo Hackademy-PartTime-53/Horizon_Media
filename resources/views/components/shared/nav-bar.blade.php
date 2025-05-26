@@ -8,8 +8,8 @@
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
-           <li>
-           <a class="nav-link active" aria-current="page" href="{{route('article.index')}}">Tutti i nostri articoli</a></li>
+           <li> 
+           <a class="nav-link active " aria-current="page" href="{{route('article.index')}}">Tutti i nostri articoli</a></li>
         </li>
         @guest
         <li class="nav-item dropdown">
