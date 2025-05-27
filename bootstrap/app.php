@@ -17,6 +17,9 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'revisor' => App\Http\Middleware\UserIsRevisor::class,
         ]);
+        $middleware->alias([
+            'revisor' => App\Http\Middleware\UserIsWriter::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
