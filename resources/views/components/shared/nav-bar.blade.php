@@ -49,10 +49,18 @@
             Ciao {{ Auth::user()->name }}
           </a>
           <ul class="dropdown-menu">
+            @if (Auth::user()->is_admin)
+            <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}"> Dashboard Admin </a></li>
+            @endif
+
+            @if (Auth::user()->is_revisor)
+            <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}"> dashboard Revisor </a></li>
+            @endif
+
             <li class="dropdown-item">
               <a class="logout" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
             </li>
-            <form action="{{ route('logout') }}" method='POST' id='form-logout' class='d-none'>
+            <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">
               @csrf
             </form>
             <li class="dropdown-item">
@@ -66,8 +74,8 @@
       <!-- Qui gli elementi allineati a destra -->
       <div class="d-flex align-items-center ms-auto">
         <a href="{{route('careers')}}" class="nav-link active me-3">Lavora con noi</a>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <form class="d-flex" role="search" method="GET" action="">
+          <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"/>
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>

@@ -21,6 +21,7 @@ class ArticleSeeder extends Seeder
         'image'=>"IA.jpg",
         'user_id'=>1,
         'category_id'=>6,
+        'is_accepted'=>true,
 
     ]);
 
@@ -32,6 +33,7 @@ class ArticleSeeder extends Seeder
         'image'=>"Olimpiadi.jpg",
         'user_id'=>1,
         'category_id'=>4,
+        'is_accepted'=>true,
 
     ]);
      Article::create
@@ -42,7 +44,7 @@ class ArticleSeeder extends Seeder
         'image'=>"Avengers.jpg",
         'user_id'=>1,
         'category_id'=>5,
-
+        'is_accepted'=>true,
     ]);
 }
     

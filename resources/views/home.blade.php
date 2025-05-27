@@ -1,6 +1,10 @@
 <x-main-layout>
 <x-slot:title>Home</x-slot:title>
 
+@if (session('alert'))
+<div class="alert alert-danger" > {{ session ('alert') }} </div>
+@endif
+
 <div class="bgcolor" style=" padding-bottom: 800px;">
 {{-- Hero con carousel --}}
   <x-hero-section 

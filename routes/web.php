@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RevisorController;
+
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -19,3 +19,17 @@ Route::get('/article/category/{category}', [ArticleController::class, 'byCategor
 Route::get('/article/user/{user}', [ArticleController::class, 'byUser'])->name('article.byUser');
 Route::get('/careers', [HomeController::class, 'careers'])->name('careers');
 Route::post('/careers/submit', [HomeController::class, 'careerssubmit'])->name('careers.submit');
+// ROTTE ADMIN
+Route::middleware('admin')->group(function(){
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::patch('/admin/{user}/set-admin', [AdminController::class, 'setAdmin'])->name('admin.setAdmin');
+    Route::patch('/admin/{user}/set-revisor', [AdminController::class, 'setRevisor'])->name('admin.setRevisor');
+    Route::patch('/admin/{user}/set-writer', [AdminController::class, 'setWriter'])->name('admin.setWriter');
+});
+// ROTTE REVISOR
+Route::middleware('revisor')->group(function(){
+Route::get('/revisor/dashboard', [RevisorController::class, 'dashboard'])->name('revisor.dashboard');
+Route::post('/revisor/{article}/accept', [RevisorController::class, 'acceptArticle'])->name('revisor.acceptArticle');
+Route::post('/revisor{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.rejectArticle');
+Route::post('/revisor{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undoArticle');
+});
