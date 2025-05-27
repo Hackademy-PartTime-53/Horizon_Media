@@ -32,7 +32,11 @@ class User extends Authenticatable
         'sites',
         'hobbies',
         'attitudes',  
-        'job',    
+        'job',  
+        'is_admin',
+        'is_revisor',
+        'is_writer'
+
     ];
 
     /**
