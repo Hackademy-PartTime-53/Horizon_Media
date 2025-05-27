@@ -29,6 +29,7 @@ class UsersSeeder extends Seeder
             'hobbies'=>'lettura, viaggi',
             'attitudes'=>'affarista',
             'job'=>'Ghostwriter, Articolista freelance',
+            'is_writer'=>true,
         ]);
     }
 }
