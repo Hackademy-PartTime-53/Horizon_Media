@@ -31,5 +31,29 @@ class UsersSeeder extends Seeder
             'job'=>'Ghostwriter, Articolista freelance',
             'is_writer'=>true,
         ]);
+
+
+        User::create([
+
+            'name' =>'Corrado',
+            'email'=>'corrado@mail.com',
+            'password'=>Hash::make('12345678'),
+            'age'=>'40',
+            'gender'=>'maschio',
+            'marital status'=>'sposato',
+            'taste'=>'Food&Wine, Glamping',
+            'newspapers'=>'Sole 24ore, Wall Street Journal',
+            'car'=>'Alfa Romeo Stelvio',
+            'movie&music'=>'Cinema azione e Rock',
+            'sites'=>'Booking.com, Skyscanner',
+            'hobbies'=>'Hiking, Scii, Golf',
+            'attitudes'=>'Leader severo ma giusto',
+            'job'=>'Chif executive Officer di HorizonMedia',
+            'is_admin'=>true
+
+
+        ]);
+
+
     }
 }
