@@ -1,9 +1,9 @@
 
 <x-main-layout>
 <x-slot:title>Careers</x-slot:title>
-@if (session('message'))
+@if (session('success'))
     <div class="alert alert-success">
-        {{ session('message') }}
+        {{ session('success') }}
     </div>
 @endif
    <div class="container-fluid p5 bg-secondary-subtle text-center">

@@ -59,7 +59,7 @@ public function careerssubmit(Request $request)
     }
 
     $user->update();
-    return redirect(route('home'))->with('success', 'Email inviata con successo');
+    return redirect(route('careers'))->with('success', 'Email inviata con successo');
 
 }
 }
