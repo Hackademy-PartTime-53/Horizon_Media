@@ -60,12 +60,12 @@
         </div>
 
         <div class="col-12 col-md-6 p-3">
-            <p>💼Lavoro come amministratore.</p>
-            <p>📋Scegliendo di lavorare come amministratore, ti occuperai di gestire le richieste di lavoro e di aggiungere o modificare le categorie.</p>
-            <p>👁️Lavoro come revisore.</p>
-            <p>🧐Scegliendo di lavorare come revisore, deciderai se un articolo può essere pubblicato o meno in piattaforma.</p>
-            <p>📝Lavoro come redattore.</p>
-            <p>✍️Scegliendo di lavorare come redattore, potrai scrivere gli articoli che saranno pubblicati.</p>
+            <p>Lavoro come amministratore.</p>
+            <p>Scegliendo di lavorare come amministratore, ti occuperai di gestire le richieste di lavoro e di aggiungere o modificare le categorie.</p>
+            <p>Lavoro come revisore.</p>
+            <p>Scegliendo di lavorare come revisore, deciderai se un articolo può essere pubblicato o meno in piattaforma.</p>
+            <p>Lavoro come redattore.</p>
+            <p>Scegliendo di lavorare come redattore, potrai scrivere gli articoli che saranno pubblicati.</p>
         </div>
     </div>
 </div>

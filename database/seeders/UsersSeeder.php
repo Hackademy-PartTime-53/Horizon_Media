@@ -55,5 +55,25 @@ class UsersSeeder extends Seeder
         ]);
 
 
+        User::create([
+
+            'name' =>'Marta',
+            'email'=>'marta@mail.com',
+            'password'=>Hash::make('12345678'),
+            'age'=>'27',
+            'gender'=>'femmina',
+            'marital status'=>'single',
+            'taste'=>'IQOS, caffè nero',
+            'newspapers'=>'GQ, Vogue',
+            'car'=>'BMW serie 3',
+            'movie&music'=>'Slice-of-life, Indie',
+            'sites'=>'AnnaWintour, Milano FashionWeek',
+            'hobbies'=>'Moda, Reality',
+            'attitudes'=>'Persona precisa ed esigente',
+            'job'=>'Editor Professionale',
+            'is_revisor'=>true
+
+
+        ]);
     }
 }
