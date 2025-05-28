@@ -38,3 +38,7 @@ Route::middleware('writer')->group(function(){
 Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
 Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
 });
+
+
+//ROTTE TNT SEARCH
+Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');

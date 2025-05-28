@@ -16,7 +16,7 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            Le nostre categorie
+            <i class="fa-solid fa-filter"></i>
           </a>
           <ul class="dropdown-menu">
             @foreach(\App\Models\Category::all() as $category)
@@ -74,9 +74,9 @@
       <!-- Qui gli elementi allineati a destra -->
       <div class="d-flex align-items-center ms-auto">
         <a href="{{route('careers')}}" class="nav-link active me-3">Lavora con noi</a>
-        <form class="d-flex" role="search" method="GET" action="">
-          <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search"/>
-          <button class="btn btn-outline-success" type="submit">Search</button>
+        <form class="d-flex" role="search" method="GET" action="{{route('article.search')}}">
+          <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Cerca</button>
         </form>
       </div>
 

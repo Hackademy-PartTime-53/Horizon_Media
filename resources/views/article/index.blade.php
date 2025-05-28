@@ -4,7 +4,7 @@
         Articoli
     </x-slot>
 
-    <x-slot name="title">Articoli</x-slot>
+    
 
 
 <div class="container my-5">
