@@ -1,7 +1,11 @@
 
 <x-main-layout>
 <x-slot:title>Careers</x-slot:title>
-
+@if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif
    <div class="container-fluid p5 bg-secondary-subtle text-center">
     <div class="row justify-content-center">
         <div class="col-12">
