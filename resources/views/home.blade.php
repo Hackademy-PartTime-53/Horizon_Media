@@ -15,7 +15,6 @@
       <h2 class="news-marquee">Le News!</h2>
     </div>
 
-
     @if(session('message'))
       <div class="alert alert-success">
         {{ session('message') }}
@@ -25,6 +24,30 @@
 
  
 <x-animation-iscritti />
+
+<div class="container my-5 position-relative">
+  <img src="storage/LavoraConNoi.jpg" 
+       alt="Lavora con noi" 
+       class="img-fluid w-100 rounded shadow" 
+       style="max-height: 400px; object-fit: cover;">
+
+  <!-- Scritta centrale a sinistra -->
+  <div class="position-absolute start-0 top-50 translate-middle-y ps-4">
+    <h2 class="text-white fw-bold shadow-text">
+      Vuoi lavorare con noi?<br>Invia la tua candidatura!
+    </h2>
+  </div>
+
+  <!-- Bottone in basso a destra -->
+  <a href="{{ route('careers') }}" 
+     class="btn-lavora-bottom-end position-absolute">
+     Lavora con noi!
+  </a>
+</div>
+
+
+
+</div>
 
 
 

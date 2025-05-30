@@ -103,3 +103,29 @@ h2{
   text-align: justify;
   font-size: 20px;
 }
+
+.shadow-text {
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.btn-lavora-bottom-end {
+  bottom: 10%;
+  right: 5%;
+  transform: translateY(50%);
+  background: transparent;
+  border: 3px solid #7fdbff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-lavora-bottom-end:hover {
+  background-color: rgba(127, 219, 255, 0.1);
+  box-shadow: 0 0 10px #7fdbff;
+  color: white;
+  border-color: #7fdbff;
+}
