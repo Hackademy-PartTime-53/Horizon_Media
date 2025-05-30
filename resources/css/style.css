@@ -56,8 +56,8 @@ h2{
     .news-marquee {
       position: absolute;
       white-space: nowrap;
-      font-size: 3rem; /* poco più grande */
-      font-style: italic; /* corsivo */
+      font-size: 3rem; 
+      font-style: italic;
       font-weight: bold;
       animation: slide-left 10s linear infinite;
     }
@@ -128,4 +128,17 @@ h2{
   box-shadow: 0 0 10px #7fdbff;
   color: white;
   border-color: #7fdbff;
+}
+.titolo_ani {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.counter {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.mappamondo{
+  margin-top: 500px;
 }

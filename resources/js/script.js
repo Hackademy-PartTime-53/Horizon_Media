@@ -16,7 +16,7 @@ let controllo_ripetizione = 'true';
 let osserva = new IntersectionObserver ( entries => {
  entries.forEach(entrie => {
     if (entrie.isIntersecting && controllo_ripetizione == 'true' ) {
-        crea_intervallo(number1, 3,0);
+        crea_intervallo(number1, 6,0);
         crea_intervallo(number2, 257, 100);
         crea_intervallo(number3, 70, 500);
         controllo_ripetizione = 'false';
