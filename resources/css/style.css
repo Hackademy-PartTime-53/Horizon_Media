@@ -39,3 +39,54 @@ h2{
     }
   }
 
+ 
+  .counter {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+
+   .news-marquee-wrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 70px;
+    }
+
+    .news-marquee {
+      position: absolute;
+      white-space: nowrap;
+      font-size: 3rem; /* poco più grande */
+      font-style: italic; /* corsivo */
+      font-weight: bold;
+      animation: slide-left 10s linear infinite;
+    }
+
+    @keyframes slide-left {
+      0% {
+        left: 100%;
+      }
+      100% {
+        left: -100%;
+      }
+    }
+
+    #nostri_numeri > p {
+
+    color: black;
+    font-size: 1rem;
+    margin-top: 2.3rem; 
+}
+
+#nostri_numeri span {
+    font-size: 2rem;
+    margin-right: 0.3rem;
+
+}
+
+.titolo_ani{
+    margin-top: 700px;
+    font-style: italic;
+    font-size: 2.5rem;
+}
+
