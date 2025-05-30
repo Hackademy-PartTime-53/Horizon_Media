@@ -66,6 +66,16 @@ class ArticleSeeder extends Seeder
         'category_id'=>3,
         'is_accepted'=>true,
     ]);
+    Article::create
+        ([
+        'title'=> ' I dazi di Trump: un’eredità controversa nel commercio globale' ,
+        'subtitle'=> 'L’imposizione di tariffe doganali sotto l’amministrazione Trump ha rimodellato le relazioni commerciali tra USA, Cina e i partner internazionali, con effetti duraturi sull’economia mondiale.',
+        'body'=>'Durante la presidenza di Donald Trump (2017-2021), una delle politiche commerciali più discusse è stata l’imposizione di dazi doganali su una vasta gamma di prodotti importati, in particolare dalla Cina. Questa strategia, parte della cosiddetta “guerra commerciale”, mirava a proteggere le industrie americane e a correggere quelli che Trump definiva “pratiche commerciali sleali”, come il furto di proprietà intellettuale e il dumping.',
+        'image'=>"dazi.jpg",
+        'user_id'=>1,
+        'category_id'=>2,
+        'is_accepted'=>true,
+    ]);
 }
     
 }

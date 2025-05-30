@@ -17,7 +17,7 @@ class HomeController extends Controller implements HasMiddleware
             new Middleware('auth', except: ['index'] ),
         ];    }
     public function index(){
-        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(4)->get();
+        $articles = Article::where('is_accepted', true)->orderBy('created_at', 'desc')->take(6)->get();
         return view('home', compact('articles'));
     }
     public function render()
