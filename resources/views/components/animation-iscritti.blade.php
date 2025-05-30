@@ -1,4 +1,4 @@
-<div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center bg-light">
+<div class="container-fluid py-5 py-md-0 d-flex justify-content-center align-items-center min-vh-100">
   <div id="nostri_numeri" class="text-center">
     <h2 class="titolo_ani mb-4">I NOSTRI NUMERI:</h2>
     <div class="row">

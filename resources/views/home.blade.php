@@ -11,7 +11,7 @@
     <x-carousel :articles="$articles" />
 
     <!-- Scritta che scorre da destra a sinistra -->
-    <div class="news-marquee-wrapper my-5">
+    <div class="news-marquee-wrapper mt-5 mb-4 mt-md-5 mb-md-5">
       <h2 class="news-marquee">Le News!</h2>
     </div>
 

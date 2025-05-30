@@ -6,7 +6,7 @@
         <div class="carousel-item @if($idx === 0) active @endif h-100">
           <div class="row g-1 align-items-stretch">
             @foreach($chunk as $article)
-              <div class="col-12 col-md-4">
+              <div class="col-12 col-md-4 ">
                 <div class="card bg-dark text-white border-0 h-100">
                   <img src="{{ asset('storage/' . $article->image) }}" 
                        class="card-img h-100 object-fit-cover" 

@@ -46,6 +46,26 @@ class ArticleSeeder extends Seeder
         'category_id'=>5,
         'is_accepted'=>true,
     ]);
+     Article::create
+        ([
+        'title'=> 'Italia e Danimarca guidano l\'iniziativa per espellere migranti condannati: nove paesi chiedono più autonomia' ,
+        'subtitle'=> 'Meloni e Frederiksen propongono una revisione delle convenzioni europee per facilitare l\'espulsione degli stranieri che hanno commesso reati, suscitando critiche da parte delle organizzazioni per i diritti umani',
+        'body'=>'Il 23 maggio 2025, Italia e Danimarca hanno annunciato una proposta congiunta, sostenuta da altri sette paesi europei, per riformare le convenzioni internazionali che regolano le politiche migratorie, come la Convenzione Europea dei Diritti dell\'Uomo. L\'obiettivo è concedere maggiore autonomia agli Stati membri nell\'espulsione di migranti che hanno commesso reati, sostenendo che le attuali normative ostacolano tali procedure e compromettono la sicurezza interna.',
+        'image'=>"Politica.jpg",
+        'user_id'=>1,
+        'category_id'=>1,
+        'is_accepted'=>true,
+    ]);
+     Article::create
+        ([
+        'title'=> 'TUTTOFOOD 2025: Milano si conferma capitale mondiale del food & beverage' ,
+        'subtitle'=> 'Dal 5 all\'8 maggio, oltre 3.000 brand da 35 Paesi si danno appuntamento a Rho Fiera per l\'evento che celebra innovazione, sostenibilità e nuove tendenze alimentari.',
+        'body'=>'TUTTOFOOD 2025, in programma dal 5 all\'8 maggio a Rho Fiera Milano, si preannuncia come l\'evento di riferimento per il settore agroalimentare a livello globale. Con oltre 3.000 espositori provenienti da 35 Paesi e una previsione di 90.000 visitatori professionali, la manifestazione rappresenta una piattaforma strategica per l\'espansione nei mercati esteri .',
+        'image'=>"Acaj.jpg",
+        'user_id'=>1,
+        'category_id'=>3,
+        'is_accepted'=>true,
+    ]);
 }
     
 }
