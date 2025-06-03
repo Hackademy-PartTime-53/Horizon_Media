@@ -21,6 +21,7 @@ Route::get('/careers', [HomeController::class, 'careers'])->name('careers');
 Route::post('/careers/submit', [HomeController::class, 'careerssubmit'])->name('careers.submit');
 // ROTTE ADMIN
 Route::middleware('admin')->group(function(){
+    Route::put('/admin/edit/category/{category}', [AdminController::class, 'editCategory'])->name('admin.editcategory');
     Route::delete('/admin/delete/tag/{tag}', [AdminController::class, 'deleteTag'])->name('admin.deleteTag');
     Route::put('/admin/edit/tag/{tag}', [AdminController::class,'editTag'])->name('admin.editTag');
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
