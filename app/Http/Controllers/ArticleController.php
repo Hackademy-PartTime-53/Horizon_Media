@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
@@ -61,13 +62,22 @@ $path = $request->file('image')->store('images', 'public');
          'user_id' => Auth::user()->id,
      ]);
 
-    // if ($request->hasFile('image')) {
-    //     $image = $request->file('image')->store('image','public');
-    //     $validate['image'] = $path;
-    //     }
-       
-        return redirect()->route('article.index')->with('success','Articolo Creato !');
 
+    $tags=explode(',', $request->tags);
+    foreach($tags as $i => $tag){
+        $tags[$i]=trim($tag);
+    }
+    foreach($tags as $tag){
+        $newTag = Tag::updateOrCreate([
+            'name' => strtolower($tag)
+        ]);
+
+        $article->tags()->attach($newTag);
+    }
+
+    return redirect(route('home'))->with('message', 'Articolo Creato');
+       
+       
 }
 
     /**

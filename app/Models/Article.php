@@ -42,4 +42,9 @@ public function toSearchableArray(){
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }
