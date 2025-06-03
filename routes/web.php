@@ -21,6 +21,8 @@ Route::get('/careers', [HomeController::class, 'careers'])->name('careers');
 Route::post('/careers/submit', [HomeController::class, 'careerssubmit'])->name('careers.submit');
 // ROTTE ADMIN
 Route::middleware('admin')->group(function(){
+    Route::delete('/admin/delete/tag/{tag}', [AdminController::class, 'deleteTag'])->name('admin.deleteTag');
+    Route::put('/admin/edit/tag/{tag}', [AdminController::class,'editTag'])->name('admin.editTag');
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::patch('/admin/{user}/set-admin', [AdminController::class, 'setAdmin'])->name('admin.setAdmin');
     Route::patch('/admin/{user}/set-revisor', [AdminController::class, 'setRevisor'])->name('admin.setRevisor');
@@ -42,3 +44,4 @@ Route::post('/article/store', [ArticleController::class, 'store'])->name('articl
 
 //ROTTE TNT SEARCH
 Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
+

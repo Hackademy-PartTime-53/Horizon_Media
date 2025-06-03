@@ -42,5 +42,12 @@
             </div>
         </div>
     </div>
-
+<div class="container my-5">
+<div class = "row justify-content-center">
+<div class = "col-12">
+  <h2>Tutti i Tags </h2>
+  <x-metainfo-table : metainfos = " $tags " metaType = "tags" />
+</div>
+</div>
+</div>
 </x-main-layout>
