@@ -20,13 +20,21 @@
                 </div>
 
                 <div class="text-center d-flex justify-content-center gap-4 my-3 flex-wrap">
+                    @if ($article->category)
                     <p class="fs-5 mb-0">
                         Categoria: 
                         <a href="{{ route('article.byCategory', $article->category) }}" class="text-capitalize fw-bold text-muted">
                             {{ $article->category->name }}
                         </a>
                     </p>
-
+                    @else
+                    <p class="small text-muted">Nessuna categoria</p>
+                            @endif
+                            <div class="mb-2">
+                             @foreach ($article->tags as $tag)
+                            <span class="badge bg-dark me-1">#{{ $tag->name }}</span>
+                            @endforeach
+                            </div>
                     <p class="fs-5 mb-0">
                         Redattore: 
                         <a href="{{ route('article.byUser', $article->user) }}" class="text-capitalize fw-bold text-muted">
@@ -62,14 +70,15 @@
                 @endif
 
 
-        <p class="small text-muted my-0">
-        @foreach ($article->tags as $tag)
-            {{ $tag->name }}
-        @endforeach
-    </p>
+       
 
                 <div class="text-center">
                     <a href="{{ route('article.index') }}" class="text-secondary">Vai alla lista degli articoli</a>
+                     <p class="small text-muted my-0">
+        @foreach ($article->tags as $tag)
+            {{'#' . $tag->name }}
+        @endforeach
+    </p>
                 </div>
             </div>
         </div>

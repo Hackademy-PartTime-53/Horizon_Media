@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Tag;
 use App\Models\Article;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Ramsey\Uuid\Codec\TimestampLastCombCodec;
 
 class ArticleSeeder extends Seeder
 {
@@ -12,8 +14,8 @@ class ArticleSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {
-        Article::create
+    {   
+        $article1 = Article::create
         ([
         'title'=> 'L\'impatto dell\' Intelligenza sul lavoro futuro' ,
         'subtitle'=> 'Come le tecnologie emergenti stanno trasformando il mondo professionale ',
@@ -25,7 +27,7 @@ class ArticleSeeder extends Seeder
 
     ]);
 
-     Article::create
+     $article2 = Article::create
         ([
         'title'=> 'Olimpiadi Milano Cortina 2026 - caos trasporti' ,
         'subtitle'=> 'Grandi problemi sui trasporti',
@@ -36,7 +38,7 @@ class ArticleSeeder extends Seeder
         'is_accepted'=>true,
 
     ]);
-     Article::create
+     $article3 = Article::create
         ([
         'title'=> 'Avengers' ,
         'subtitle'=> 'Avangers: Doomsday e Secret Wars posticipano la data di uscita al cinema',
@@ -46,7 +48,7 @@ class ArticleSeeder extends Seeder
         'category_id'=>5,
         'is_accepted'=>true,
     ]);
-     Article::create
+     $article4 = Article::create
         ([
         'title'=> 'Italia e Danimarca guidano l\'iniziativa per espellere migranti condannati: nove paesi chiedono più autonomia' ,
         'subtitle'=> 'Meloni e Frederiksen propongono una revisione delle convenzioni europee per facilitare l\'espulsione degli stranieri che hanno commesso reati, suscitando critiche da parte delle organizzazioni per i diritti umani',
@@ -56,7 +58,7 @@ class ArticleSeeder extends Seeder
         'category_id'=>1,
         'is_accepted'=>true,
     ]);
-     Article::create
+     $article5 = Article::create
         ([
         'title'=> 'TUTTOFOOD 2025: Milano si conferma capitale mondiale del food & beverage' ,
         'subtitle'=> 'Dal 5 all\'8 maggio, oltre 3.000 brand da 35 Paesi si danno appuntamento a Rho Fiera per l\'evento che celebra innovazione, sostenibilità e nuove tendenze alimentari.',
@@ -66,7 +68,7 @@ class ArticleSeeder extends Seeder
         'category_id'=>3,
         'is_accepted'=>true,
     ]);
-    Article::create
+     $article6 = Article::create
         ([
         'title'=> ' I dazi di Trump: un’eredità controversa nel commercio globale' ,
         'subtitle'=> 'L’imposizione di tariffe doganali sotto l’amministrazione Trump ha rimodellato le relazioni commerciali tra USA, Cina e i partner internazionali, con effetti duraturi sull’economia mondiale.',
@@ -76,6 +78,26 @@ class ArticleSeeder extends Seeder
         'category_id'=>2,
         'is_accepted'=>true,
     ]);
+    Tag::create ([
+        'name' => 'Hashtag1'
+        
+    ]);
+    Tag::create ([
+        'name' => 'Hashtag2'
+        
+    ]);
+    Tag::create ([
+        'name' => 'Hashtag3'
+        
+    ]);
+
+
+
+    $articles = [$article1, $article2, $article3, $article4, $article5, $article6];
+    $tags = Tag::all();
+    foreach ($articles as $article){
+        $randomTags = $tags->random(rand(1,3));
+        $article->tags()->attach($randomTags->pluck('id'));
+    }
 }
-    
 }

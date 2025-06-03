@@ -20,6 +20,14 @@
                 <a href="{{ route('article.byCategory', $article->category) }}" 
                    class="text-capitalize text-muted">{{ $article->category->name }}</a>
               </p>
+
+              {{-- Qui inserisco i tag --}}
+              <div class="mb-2">
+                @foreach ($article->tags as $tag)
+                  <span class="badge bg-dark me-1">#{{ $tag->name }}</span>
+                @endforeach
+              </div>
+
               <p class="fs-6 mb-0">Redattore:
                 <a href="{{ route('article.byUser', $article->user) }}" 
                    class="text-capitalize fw-bold text-muted">{{ $article->user->name }}</a>
@@ -36,5 +44,6 @@
       @endforeach
     </div>
   </div>
+  <div class="bgcolor" style="padding-bottom: 800px;"></div>
 
 </x-main-layout>

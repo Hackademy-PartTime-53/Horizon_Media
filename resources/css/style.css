@@ -142,3 +142,75 @@ h2{
 .mappamondo{
   margin-top: 500px;
 }
+
+/* PAGINA CREATE */
+form.card {
+    border-radius: 1rem;
+    background-color: #fff;
+}
+
+.form-label {
+    color: #1f2d3d;
+    font-size: 1rem;
+}
+
+.form-control,
+.form-select {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+button[type="submit"] {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    background: linear-gradient(to right, #4a90e2, #357ABD);
+    border: none;
+    transition: 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(to right, #357ABD, #2d68a3);
+    transform: scale(1.02);
+}
+
+img.object-fit-cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+.form-wrapper-3d {
+    background: linear-gradient(145deg, #0ff 0%, #00f6ff 100%);
+    padding: 6px;
+    border-radius: 1.2rem;
+    box-shadow:
+        0 8px 15px rgba(0, 255, 255, 0.3),
+        0 12px 35px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Cornice 3D fluo attorno al form */
+.form-3d-wrapper {
+    background: linear-gradient(135deg, #00fff7, #00c3ff); /* Fluo azzurro brillante */
+    padding: 5px;
+    border-radius: 1rem;
+    box-shadow: 0 0 12px rgba(0, 255, 247, 0.5), 0 4px 12px rgba(0, 200, 255, 0.6);
+}
+
+/* Sfondo interno del form (dentro la cornice) */
+.card.bg-form-inner {
+    background-color: #f0faff; /* Azzurro chiaro molto tenue */
+    border-radius: 0.8rem;
+}
+
+
+/* PAGINA CREATE */
