@@ -30,11 +30,7 @@
         </div>
       @endforeach
 
-        <p class="small text-muted my-0">
-        @foreach ($article->tags as $tag)
-            {{ $tag->name }}
-        @endforeach
-    </p>
+ 
     </div>
 
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">

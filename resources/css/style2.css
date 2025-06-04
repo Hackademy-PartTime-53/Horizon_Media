@@ -1,0 +1,137 @@
+/* ---------------------------------------------- */
+/* Contenitore principale della pagina             */
+/* ---------------------------------------------- */
+.lavora-container {
+    background-color: #f9f9f9; /* sfondo leggermente più chiaro */
+    padding: 3rem 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    color: #212529; /* testo un po' più scuro */
+}
+
+/* ---------------------------------------------- */
+/* Titolo principale                               */
+/* ---------------------------------------------- */
+.lavora-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 0.02em;
+}
+
+/* ---------------------------------------------- */
+/* Card form                                       */
+/* ---------------------------------------------- */
+.lavora-form-card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 2rem;
+    background-color: #ffffff;
+}
+
+/* ---------------------------------------------- */
+/* Label nei form                                  */
+/* ---------------------------------------------- */
+.lavora-label {
+    font-weight: 600;
+    color: #495057;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------------------------------------------- */
+/* Input e select                                 */
+/* ---------------------------------------------- */
+.lavora-input,
+.lavora-select,
+.lavora-textarea {
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+}
+
+.lavora-input:focus,
+.lavora-select:focus,
+.lavora-textarea:focus {
+    border-color: #2a69ac; /* blu WireUp */
+    box-shadow: 0 0 0 0.25rem rgba(42, 105, 172, 0.25);
+    outline: none;
+}
+
+/* ---------------------------------------------- */
+/* Bottone invio                                  */
+/* ---------------------------------------------- */
+.lavora-btn-submit {
+    border-radius: 1rem;
+    font-weight: 600;
+    padding: 0.6rem 2.5rem;
+    background-color: transparent;
+    border: 2px solid #2a69ac;
+    color: #2a69ac;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.lavora-btn-submit:hover,
+.lavora-btn-submit:focus {
+    background-color: #2a69ac;
+    color: #fff;
+    border-color: #2a69ac;
+}
+
+/* ---------------------------------------------- */
+/* Messaggio successo                              */
+/* ---------------------------------------------- */
+.lavora-alert-success {
+    border-radius: 0.75rem;
+    background-color: #e6f4ea;
+    color: #31704f;
+    border: 1px solid #c3e6cb;
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ---------------------------------------------- */
+/* Descrizione ruoli                               */
+/* ---------------------------------------------- */
+.lavora-role-desc p {
+    font-size: 1rem;
+    color: #495057;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+}
+
+.lavora-role-desc h5 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+/* ---------------------------------------------- */
+/* Responsive                                     */
+/* ---------------------------------------------- */
+@media (max-width: 768px) {
+    .lavora-title {
+        font-size: 2.5rem;
+    }
+
+    .lavora-form-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .lavora-btn-submit {
+        width: 100%;
+        padding: 0.75rem 0;
+    }
+}
