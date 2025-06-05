@@ -5,7 +5,7 @@
     <div class="alert alert-danger">{{ session('alert') }}</div>
   @endif
 
-  <div class="bgcolor" style="padding-bottom: 800px;">
+  <div class="bgcolor" style="padding-bottom: 500px;">
     {{-- Hero con carousel --}}
     <x-hero-section :articles="$articles" />
     <x-carousel :articles="$articles" />
@@ -45,7 +45,7 @@
   </a>
 </div>
 
-
+<x-shared.social />
 
 </div>
 

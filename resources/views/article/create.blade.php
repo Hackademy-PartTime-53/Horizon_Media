@@ -11,7 +11,7 @@
 
     <!-- Immagine orizzontale decorativa sotto al titolo -->
     <div class="container mb-4">
-        <img src="/images/article-banner.jpg" alt="Banner" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="max-height: 250px;">
+        <img src="/storage/" alt="Banner" class="img-fluid rounded shadow-sm w-100 object-fit-cover" style="max-height: 300px;">
     </div>
 
     <!-- Form -->
