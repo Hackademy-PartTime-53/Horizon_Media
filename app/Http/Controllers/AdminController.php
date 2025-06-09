@@ -99,4 +99,16 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message', 'Categoria inserita correttamente');
     }
+    public function storeTag(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|unique:tags,name',
+        ]);
+
+        Tag::create([
+            'name' => strtolower($request->name),
+        ]);
+
+        return redirect()->back()->with('message', 'Tag inserito correttamente');
+    }
 }

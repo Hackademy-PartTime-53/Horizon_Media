@@ -46,13 +46,22 @@
 <div class="container my-5">
 <div class = "row justify-content-center">
 <div class = "col-12">
-  <h2>Tutti i Tags </h2>
+  <div class="container">
+<div class="d-flex justify-content-between">
+    <h2>Tutti i Tags</h2>
+    <form action="{{ route('admin.storeTag') }}" method="POST" class="w-50 d-flex m-3">
+        @csrf
+        <input type="text" name="name" class="form-control me-2" placeholder="Inserisci una nuovo Tag">
+        <button type="submit" class="btn btn-outline-secondary">Inserisci</button>
+    </form>
+    
+</div>
   <x-metainfo-table :metaInfos="$tags" metaType="tags" />
 </div>
 </div>
 </div>
 
-<div class="container">
+<div class="container mt-5">
 <div class="d-flex justify-content-between">
     <h2>Tutte le categorie</h2>
     <form action="{{ route('admin.storeCategory') }}" method="POST" class="w-50 d-flex m-3">
