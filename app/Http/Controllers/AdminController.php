@@ -15,8 +15,9 @@ class AdminController extends Controller
         $revisorRequests = User::where('is_revisor', null)->get();
         $writerRequests = User::where('is_writer', null)->get();
         $categories = Category::all();
+        $tags = Tag::all();
 
-        return view('admin.dashboard', compact('adminRequests', 'revisorRequests', 'writerRequests', 'categories'));
+        return view('admin.dashboard', compact('adminRequests', 'revisorRequests', 'writerRequests', 'categories', 'tags'));
     }
 
     public function setAdmin(User $user)
