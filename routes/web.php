@@ -5,8 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
-
-
+use App\Http\Controllers\WriterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -48,4 +47,13 @@ Route::post('/article/store', [ArticleController::class, 'store'])->name('articl
 
 //ROTTE TNT SEARCH
 Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name('article.search');
+
+//ROTTE WRITER
+    Route::middleware('writer')->group(function(){
+    Route::get('/writer/dashboard',[WriterController::class, 'dashboard'])->name('writer.dashboard');
+    Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
+    Route::put('/article/update/{article}', [ArticleController::class, 'update'])->name('article.update');
+    Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
+});
+
 

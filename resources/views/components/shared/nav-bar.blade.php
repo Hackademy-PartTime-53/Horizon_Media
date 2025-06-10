@@ -51,6 +51,9 @@
             <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
             <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">@csrf</form>
             <li><a class="dropdown-item" href="{{ route('article.create') }}">Crea articolo</a></li>
+            @if (Auth::user()->is_writer)
+            <li><a class="dropdown-item" href="{{ route('writer.dashboard') }}">Dashboard Redattore</a></li>
+            @endif
           </ul>
         </li>
         @endauth
