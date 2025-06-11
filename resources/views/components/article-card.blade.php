@@ -20,6 +20,7 @@
                             #{{ $tag->name }}
                             @endforeach
                             </p>
+                            <p class="card-subtitle text-muted fst-italic small">tempo di lettura{{ $article->readDuration()}} min </p>
                             <p class="fs-5">Redattore:
                             <a href="{{ route('article.byUser', $article->user) }}" class="text-capitalize fw-bold text-muted">{{ $article->user->name }}</a>
                             </p>

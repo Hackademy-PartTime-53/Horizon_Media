@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\User;
 use App\Models\Category;
+use Illuminate\Support\Str;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -53,4 +54,13 @@ public function toSearchableArray(){
     {
         return 'slug';
     }
+
+    public function readDuration(){
+        $totalWords = Str::wordCount($this->body);
+        $minutesToRead = round($totalWords / 200);
+        return intval($minutesToRead);
+
+
+    }
+    
 }
