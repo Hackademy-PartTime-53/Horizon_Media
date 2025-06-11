@@ -1,7 +1,6 @@
 <x-main-layout>
   <x-slot name="title">Registrati</x-slot>
 
-  <link rel="stylesheet" href="{{ asset('css/nyt-login.css') }}">
 
   <div class="nyt-login-wrapper">
     <h1 class="nyt-login-title">Crea un nuovo account</h1>

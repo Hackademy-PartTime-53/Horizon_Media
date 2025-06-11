@@ -1,7 +1,7 @@
 <x-main-layout>
   <x-slot name="title">Filtro categoria</x-slot>
 
-  <link rel="stylesheet" href="{{ asset('css/nyt-style.css') }}">
+
 
   <div class="container my-5">
     <div class="row">

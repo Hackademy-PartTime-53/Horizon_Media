@@ -1,8 +1,6 @@
 <x-main-layout>
   <x-slot name="title">Articolo</x-slot>
 
-  <link rel="stylesheet" href="{{ asset('css/nyt-article.css') }}">
-
   <div class="container my-5">
     <div class="row">
 
