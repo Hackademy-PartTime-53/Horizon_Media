@@ -36,7 +36,7 @@
             </div>
             <div class="card-footer d-flex justify-content-between align-items-center">
               <small class="text-muted">Redatto il {{ $article->created_at->format('d/m/Y') }}</small>
-              <a href="{{ route ('article.show', $article) }}" 
+              <a href="{{ route ('article.show',['article'=>$article]) }}" 
                  class="btn btn-outline-secondary btn-sm">Leggi</a>
             </div>
           </div>

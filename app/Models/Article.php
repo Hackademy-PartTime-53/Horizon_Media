@@ -31,6 +31,7 @@ public function toSearchableArray(){
         'user_id',
         'category_id',
         'is_accepted',
+        'slug',
     ];
 
     public function user()
@@ -46,5 +47,10 @@ public function toSearchableArray(){
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+    
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 }

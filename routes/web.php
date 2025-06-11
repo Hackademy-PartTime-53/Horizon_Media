@@ -13,7 +13,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/article/create', [ArticleController::class, 'create'])->name('article.create');
 Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
 Route::get('/article/index',[ArticleController::class, 'index'])->name('article.index');
-Route::get('/article/show{article}', [ArticleController::class, 'show'])->name('article.show');
+Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
 Route::get('/article/user/{user}', [ArticleController::class, 'byUser'])->name('article.byUser');
 Route::get('/careers', [HomeController::class, 'careers'])->name('careers');
@@ -35,8 +35,8 @@ Route::middleware('admin')->group(function(){
 Route::middleware('revisor')->group(function(){
 Route::get('/revisor/dashboard', [RevisorController::class, 'dashboard'])->name('revisor.dashboard');
 Route::post('/revisor/{article}/accept', [RevisorController::class, 'acceptArticle'])->name('revisor.acceptArticle');
-Route::post('/revisor{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.rejectArticle');
-Route::post('/revisor{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undoArticle');
+Route::post('/revisor/{article}/reject', [RevisorController::class, 'rejectArticle'])->name('revisor.rejectArticle');
+Route::post('/revisor/{article}/undo', [RevisorController::class, 'undoArticle'])->name('revisor.undoArticle');
 });
 // ROTTE WRITER
 Route::middleware('writer')->group(function(){
