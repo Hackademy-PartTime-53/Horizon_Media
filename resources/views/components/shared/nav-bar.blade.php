@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow position-relative">
   <div class="container-fluid position-relative">
-    
-    <!-- Brand centrato su desktop, statico su mobile -->
+
+    <!-- Brand centrato su desktop -->
     <a class="navbar-brand navbar-brand-centered" href="{{route('home')}}">
       HorizonMedia <i class="fa-solid fa-newspaper ms-2"></i>
     </a>
@@ -15,67 +15,72 @@
     <!-- Contenuto navbar -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-      <!-- Menu principale allineato a sinistra desktop, centrato mobile -->
+      <!-- Menu principale -->
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center text-lg-start">
         <li class="nav-item">
           <a class="nav-link active d-flex align-items-center justify-content-center justify-content-lg-start" href="{{route('home')}}">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active d-flex align-items-center justify-content-center justify-content-lg-start" href="{{route('article.index')}}">Tutti i nostri articoli</a>
+
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link active" href="{{route('article.index')}}">Tutti i nostri articoli</a>
         </li>
 
-        @guest
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle d-flex align-items-center justify-content-center justify-content-lg-start" href="#" role="button" data-bs-toggle="dropdown">
-            Benvenuto!
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
-            <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-          </ul>
-        </li>
-        @endguest
-
-        @auth
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle d-flex align-items-center justify-content-center justify-content-lg-start" href="#" role="button" data-bs-toggle="dropdown">
-            Ciao {{ Auth::user()->name }}
-          </a>
-          <ul class="dropdown-menu">
-            @if (Auth::user()->is_admin)
-            <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
-            @endif
-            @if (Auth::user()->is_revisor)
-            <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Dashboard Revisor</a></li>
-            @endif
-            <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
-            <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">@csrf</form>
-            <li><a class="dropdown-item" href="{{ route('article.create') }}">Crea articolo</a></li>
-            @if (Auth::user()->is_writer)
-            <li><a class="dropdown-item" href="{{ route('writer.dashboard') }}">Dashboard Redattore</a></li>
-            @endif
-          </ul>
-        </li>
-        @endauth
-      </ul>
-
-      <!-- Icona filtro -->
-      <ul class="navbar-nav ms-auto me-3">
-        <li class="nav-item dropdown">
+        <!-- Filtro categorie spostato accanto -->
+        <li class="nav-item dropdown d-flex align-items-center">
           <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
             <i class="fa-solid fa-filter"></i>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end">
+          <ul class="dropdown-menu">
             @foreach(\App\Models\Category::all() as $category)
-            <li><a class="dropdown-item" href="{{ route('article.byCategory', $category->id) }}">{{ $category->name }}</a></li>
+              <li><a class="dropdown-item" href="{{ route('article.byCategory', $category->id) }}">{{ $category->name }}</a></li>
             @endforeach
           </ul>
         </li>
       </ul>
 
-      <!-- Cerca + Lavora -->
+      <!-- Form di ricerca + Dropdown utente spostato a destra -->
       <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-2 ms-lg-2">
-        <a href="{{route('careers')}}" class="nav-link active">Lavora con noi</a>
+
+        <!-- Dropdown Benvenuto / Utente -->
+        <ul class="navbar-nav">
+          @guest
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                Benvenuto!
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
+                <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+              </ul>
+            </li>
+          @endguest
+
+          @auth
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                Ciao {{ Auth::user()->name }}
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                @if (Auth::user()->is_admin)
+                  <li><a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard Admin</a></li>
+                @endif
+                @if (Auth::user()->is_revisor)
+                  <li><a class="dropdown-item" href="{{ route('revisor.dashboard') }}">Dashboard Revisor</a></li>
+                @endif
+                <li><a class="dropdown-item" href="{{ route('article.create') }}">Crea articolo</a></li>
+                @if (Auth::user()->is_writer)
+                  <li><a class="dropdown-item" href="{{ route('writer.dashboard') }}">Dashboard Redattore</a></li>
+                @endif
+                <li>
+                  <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                  <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">@csrf</form>
+                </li>
+              </ul>
+            </li>
+          @endauth
+        </ul>
+
+        <!-- Form cerca -->
         <form class="d-flex" role="search" method="GET" action="{{route('article.search')}}">
           <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search" />
           <button class="btn btn-gradient" type="submit">Cerca</button>

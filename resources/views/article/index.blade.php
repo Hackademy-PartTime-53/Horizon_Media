@@ -1,53 +1,66 @@
 <x-main-layout>
 
   <x-slot name="title">
-      Articoli
+    Articoli
   </x-slot>
 
   <div class="container my-5">
-    <div class="row g-3">
-      @foreach ($articles as $article)
-        <div class="col-12 col-md-3 d-flex">
-          <div class="card d-flex flex-column h-100 w-100">
-            <img src="{{ Storage::url($article->image) }}" 
-                 class="card-img-top object-fit-cover" 
-                 alt="Immagine dell'articolo: {{ $article->title }}" 
-                 style="height: 180px;">
-            <div class="card-body flex-grow-1 d-flex flex-column">
-              <h5 class="card-title">{{ $article->title }}</h5>
-              <p class="card-subtitle mb-2 text-muted">{{ $article->subtitle }}</p>
-              <p class="small text-muted mb-1">Categoria:
-                <a href="{{ route('article.byCategory', $article->category) }}" 
-                   class="text-capitalize text-muted">{{ $article->category->name }}</a>
-              </p>
+    <div class="row">
+      <div class="col-12">
+        @foreach ($articles as $article)
+          <div class="nyt-card">
+            <div class="nyt-card-text">
+              <div class="nyt-meta">{{ $article->readDuration() }} MIN READ</div>
+              <div class="nyt-card-title">{{ $article->title }}</div>
+              <div class="nyt-card-subtitle">{{ $article->subtitle }}</div>
 
-              {{-- Qui inserisco i tag --}}
-              <div class="mb-2">
+              @if ($article->category)
+                <div class="nyt-meta">
+                  Categoria: 
+                  <a href="{{ route('article.byCategory', $article->category) }}" class="text-muted text-decoration-none text-capitalize">
+                    {{ $article->category->name }}
+                  </a>
+                </div>
+              @else
+                <div class="nyt-meta">Nessuna categoria</div>
+              @endif
+
+              <div class="nyt-meta">
                 @foreach ($article->tags as $tag)
-                  <span class="badge bg-dark me-1">#{{ $tag->name }}</span>
+                  <span class="nyt-tag">#{{ $tag->name }}</span>
                 @endforeach
               </div>
 
-              <p class="fs-6 mb-0">Redattore:
-                <a href="{{ route('article.byUser', $article->user) }}" 
-                   class="text-capitalize fw-bold text-muted">{{ $article->user->name }}</a>
-              </p>
-              <div class="mt-auto"></div> <!-- spinge il footer in basso -->
+              <div class="nyt-author">
+                Redattore:
+                <a href="{{ route('article.byUser', $article->user) }}" class="fw-bold text-muted text-capitalize text-decoration-none">
+                  {{ $article->user->name }}
+                </a>
+              </div>
+
+              <div class="nyt-footer">
+                Pubblicato il {{ $article->created_at->format('d/m/Y') }}
+              </div>
+
+              <a href="{{ route('article.show', ['article' => $article]) }}" class="btn btn-outline-secondary mt-2">
+                Leggi
+              </a>
             </div>
-            <div class="card-footer d-flex justify-content-between align-items-center">
-              <small class="text-muted">Redatto il {{ $article->created_at->format('d/m/Y') }}</small>
-              <a href="{{ route ('article.show',['article'=>$article]) }}" 
-                 class="btn btn-outline-secondary btn-sm">Leggi</a>
+
+            <div class="nyt-img-container">
+              <img src="{{ Storage::url($article->image) }}" 
+                   alt="Immagine: {{ $article->title }}" 
+                   class="nyt-img">
+              <div class="nyt-footer">via {{ $article->user->name }}</div>
             </div>
           </div>
-        </div>
-      @endforeach
+        @endforeach
+      </div>
     </div>
   </div>
-  <div class="bgcolor" style="padding-bottom: 800px;"></div>
 
 
-
+    <div class="bgcolor" style="padding-bottom: 200px;"></div>
 
 
 

@@ -59,8 +59,14 @@ public function toSearchableArray(){
         $totalWords = Str::wordCount($this->body);
         $minutesToRead = round($totalWords / 200);
         return intval($minutesToRead);
-
-
     }
     
+        public function comments() {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes() {
+        return $this->hasMany(Like::class);
+    }
+
 }

@@ -88,8 +88,18 @@ class ArticleController extends Controller implements HasMiddleware
      */
     public function show(Article $article)
     {
+         $tagIds = $article->tags->pluck('id');
 
-        return view('article.show', compact('article'));
+    $relatedArticles = \App\Models\Article::whereHas('tags', function ($query) use ($tagIds) {
+        $query->whereIn('tags.id', $tagIds);
+    })
+            ->where('id', '!=', $article->id)
+            ->distinct()
+            ->latest()
+            ->take(3)
+            ->get();
+
+            return view('article.show', compact('article', 'relatedArticles'));
     }
 
     /**

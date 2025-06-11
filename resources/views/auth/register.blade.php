@@ -1,92 +1,82 @@
+<x-main-layout>
+  <x-slot name="title">Registrati</x-slot>
 
- <x-main-layout>
+  <link rel="stylesheet" href="{{ asset('css/nyt-login.css') }}">
 
-  <x-slot:title>Registrati</x-slot:title>
+  <div class="nyt-login-wrapper">
+    <h1 class="nyt-login-title">Crea un nuovo account</h1>
 
-  <div class="container-fluid min-vh-100 d-flex flex-column justify-content-center align-items-center bg-gradient" 
-       style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-    
-    <div class="text-center mb-5 mt-5">
-      <h1 class="display-1 fw-bold text-white text-shadow">Registrati</h1>
-    </div>
+    <form action="{{ route('register') }}" method="POST" class="nyt-login-form" novalidate>
+      @csrf
 
-    <div class="card p-5 shadow-lg rounded-4" style="max-width: 420px; width: 100%; background-color: rgba(255,255,255,0.95);">
-      <form action="{{ route('register') }}" method="POST" novalidate>
-        @csrf
-        
-        <div class="mb-4">
-          <label for="name" class="form-label fw-semibold">Nome utente</label>
-          <input 
-            type="text" 
-            class="form-control form-control-lg @error('name') is-invalid @enderror" 
-            id="name" 
-            name="name" 
-            value="{{ old('name') }}" 
-            placeholder="Il tuo nome utente"
-            autofocus
-          >
-          @error('name')
-            <div class="invalid-feedback">{{ $message }}</div>
-          @enderror
-        </div>
+      <div class="mb-4 text-start">
+        <label for="name" class="nyt-label">Nome utente</label>
+        <input 
+          type="text" 
+          name="name" 
+          id="name" 
+          class="nyt-input @error('name') is-invalid @enderror" 
+          value="{{ old('name') }}" 
+          required 
+          autofocus
+        >
+        @error('name')
+          <div class="nyt-error">{{ $message }}</div>
+        @enderror
+      </div>
 
-        <div class="mb-4">
-          <label for="email" class="form-label fw-semibold">Email</label>
-          <input 
-            type="email" 
-            class="form-control form-control-lg @error('email') is-invalid @enderror" 
-            id="email" 
-            name="email" 
-            value="{{ old('email') }}" 
-            placeholder="esempio@email.com"
-          >
-          @error('email')
-            <div class="invalid-feedback">{{ $message }}</div>
-          @enderror
-        </div>
-        
-        <div class="mb-4">
-          <label for="password" class="form-label fw-semibold">Password</label>
-          <input 
-            type="password" 
-            class="form-control form-control-lg @error('password') is-invalid @enderror" 
-            id="password" 
-            name="password" 
-            placeholder="••••••••"
-          >
-          @error('password')
-            <div class="invalid-feedback">{{ $message }}</div>
-          @enderror
-        </div>
+      <div class="mb-4 text-start">
+        <label for="email" class="nyt-label">Email</label>
+        <input 
+          type="email" 
+          name="email" 
+          id="email" 
+          class="nyt-input @error('email') is-invalid @enderror" 
+          value="{{ old('email') }}" 
+          required
+        >
+        @error('email')
+          <div class="nyt-error">{{ $message }}</div>
+        @enderror
+      </div>
 
-        <div class="mb-4">
-          <label for="password_confirmation" class="form-label fw-semibold">Conferma password</label>
-          <input 
-            type="password" 
-            class="form-control form-control-lg" 
-            id="password_confirmation" 
-            name="password_confirmation" 
-            placeholder="••••••••"
-          >
-        </div>
+      <div class="mb-4 text-start">
+        <label for="password" class="nyt-label">Password</label>
+        <input 
+          type="password" 
+          name="password" 
+          id="password" 
+          class="nyt-input @error('password') is-invalid @enderror" 
+          required
+        >
+        @error('password')
+          <div class="nyt-error">{{ $message }}</div>
+        @enderror
+      </div>
 
-        <div class="d-grid mb-3">
-          <button type="submit" class="btn btn-primary btn-lg shadow-sm">
-            Registrati
-          </button>
-        </div>
+      <div class="mb-4 text-start">
+        <label for="password_confirmation" class="nyt-label">Conferma password</label>
+        <input 
+          type="password" 
+          name="password_confirmation" 
+          id="password_confirmation" 
+          class="nyt-input" 
+          required
+        >
+      </div>
 
-        <p class="text-center text-muted">
-          Sei già registrato? 
-          <a href="{{ route('login') }}" class="text-primary fw-semibold text-decoration-none">Accedi qui</a>
+      <button type="submit" class="nyt-button">Registrati</button>
+
+      <div class="nyt-footer-link">
+        <p>Hai già un account? 
+          <a href="{{ route('login') }}">Accedi qui</a>
         </p>
-
-      </form>
-    </div>
-
+      </div>
+    </form>
   </div>
-  
-  <div class="bgcolor" style="padding-bottom: 800px;"></div>
+
+
+    <div class="bgcolor" style="padding-bottom: 200px;"></div>
 
 </x-main-layout>
 

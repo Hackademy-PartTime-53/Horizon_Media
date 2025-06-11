@@ -1,25 +1,33 @@
-<div class="card-grid">
-  <div class="info-card">
-    <img src="" alt="Apple" class="icon bi bi-facebook">
-    <h4>iOS App</h4>
-    <p>Create, browse and save palettes on the go.</p>
+<div class="card-grid editorial-tools">
+  <div class="info-card editorial-card">
+    <i class="bi bi-journal-text editorial-icon"></i>
+    <h4>Scrivi per noi</h4>
+    <p>Diventa autore e pubblica articoli su HorizonMedia.</p>
   </div>
-  <div class="info-card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android" class="icon">
-    <h4>Android App</h4>
-    <p>Thousands of palettes in your pocket.</p>
+
+  <div class="info-card editorial-card">
+    <i class="bi bi-phone editorial-icon"></i>
+    <h4>App Mobile</h4>
+    <p>Scarica l'app per leggere notizie ovunque.</p>
   </div>
-  <div class="info-card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg" alt="Figma" class="icon">
-    <h4>Figma Plugin</h4>
-    <p>All palettes right in your workspace.</p>
+
+  <div class="info-card editorial-card purple-card">
+    <i class="bi bi-puzzle editorial-icon"></i>
+    <h4>Estensione Chrome</h4>
+    <p>Resta aggiornato con notifiche in tempo reale.</p>
   </div>
-  <div class="info-card purple-card">
-    <h4>Add to Chrome</h4>
+
+  <div class="info-card editorial-card">
+    <i class="bi bi-brush editorial-icon"></i>
+    <h4>Plugin Adobe</h4>
+    <p>Integra i nostri contenuti nei tuoi progetti creativi.</p>
   </div>
-  <div class="info-card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Adobe_Logo.png" alt="Adobe" class="icon">
-    <h4>Adobe Extension</h4>
-    <p>Use Coolors with your favorite tools.</p>
-  </div>
+
+<div class="info-card editorial-card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="icon">
+  <h4>Instagram</h4>
+  <p>Seguici per aggiornamenti, retroscena e contenuti esclusivi.</p>
+</div>
+
+
 </div>

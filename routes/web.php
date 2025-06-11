@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\RevisorController;
 use App\Http\Controllers\WriterController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\RevisorController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -54,6 +56,11 @@ Route::get('/article/search', [ArticleController::class, 'articleSearch'])->name
     Route::get('/article/edit/{article}', [ArticleController::class, 'edit'])->name('article.edit');
     Route::put('/article/update/{article}', [ArticleController::class, 'update'])->name('article.update');
     Route::delete('/article/destroy/{article}', [ArticleController::class, 'destroy'])->name('article.destroy');
+});
+// ROTTE COMMENTI E LIKE
+Route::middleware('auth')->group(function () {
+    Route::post('/articles/{article}/comments', [CommentController::class, 'store'])->name('comments.store');
+    Route::post('/articles/{article}/like', [LikeController::class, 'toggle'])->name('articles.like');
 });
 
 

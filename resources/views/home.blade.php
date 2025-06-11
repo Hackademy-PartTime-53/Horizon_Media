@@ -5,54 +5,48 @@
     <div class="alert alert-danger">{{ session('alert') }}</div>
   @endif
 
-  <div class="bgcolor" style="padding-bottom: 500px;">
-    {{-- Hero con carousel --}}
-    <x-hero-section :articles="$articles" />
-    <x-carousel :articles="$articles" />
+  <!-- HERO SECTION -->
+  <x-hero-section :articles="$articles" />
 
-    <!-- Scritta che scorre da destra a sinistra -->
-    <div class="news-marquee-wrapper mt-5 mb-4 mt-md-5 mb-md-5">
-      <h2 class="news-marquee">Le News!</h2>
+  <!-- NEWS TICKER PRIMA DI TUTTO IL CONTENUTO -->
+  <div class=" nyt-marquee-container mt-5 mb-4 mt-md-5 mb-md-5">
+      <div class="nyt-marquee-track">
+    <span >Le News!</span>
+  </div>
+  </div>
+
+  <div class="nyt-typewriter-wrapper">
+  <h2 class="nyt-typewriter-text" id="nytHeadline"></h2>
+  </div>
+
+  <!-- CAROUSEL -->
+  <x-carousel :articles="$articles" />
+
+  @if(session('message'))
+    <div class="alert alert-success">
+      {{ session('message') }}
+    </div>
+  @endif
+
+  <!-- SOCIAL COMPONENT -->
+  <x-shared.social />
+
+  <!-- ANIMAZIONE ISCRITTI -->
+  <x-animation-iscritti />
+
+  <!-- CTA LAVORA CON NOI -->
+  <div class="container my-4 position-relative">
+    <img src="storage/LavoraConNoi.jpg" alt="Lavora con noi" class="img-fluid w-100 rounded shadow" style="max-height: 400px; object-fit: cover;">
+
+    <div class="position-absolute start-0 top-50 translate-middle-y ps-4">
+      <h2 class="text-white fw-bold shadow-text">
+        Vuoi lavorare con noi?<br>Invia la tua candidatura!
+      </h2>
     </div>
 
-    @if(session('message'))
-      <div class="alert alert-success">
-        {{ session('message') }}
-      </div>
-    @endif
+    <a href="{{ route('careers') }}" class="btn-lavora-bottom-end position-absolute">
+      Lavora con noi!
+    </a>
   </div>
-
- 
-<x-animation-iscritti />
-
-<div class="container my-5 position-relative">
-  <img src="storage/LavoraConNoi.jpg" 
-       alt="Lavora con noi" 
-       class="img-fluid w-100 rounded shadow" 
-       style="max-height: 400px; object-fit: cover;">
-
-  <!-- Scritta centrale a sinistra -->
-  <div class="position-absolute start-0 top-50 translate-middle-y ps-4">
-    <h2 class="text-white fw-bold shadow-text">
-      Vuoi lavorare con noi?<br>Invia la tua candidatura!
-    </h2>
-  </div>
-
-  <!-- Bottone in basso a destra -->
-  <a href="{{ route('careers') }}" 
-     class="btn-lavora-bottom-end position-absolute">
-     Lavora con noi!
-  </a>
-</div>
-
-<x-shared.social />
-
-</div>
-
-
-
-  
+    <div class="bgcolor" style="padding-bottom: 200px;"></div>
 </x-main-layout-animation>
-
-  
-

@@ -112,4 +112,12 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message', 'Tag inserito correttamente');
     }
+    public function destroy($id)
+{
+    $tag = Tag::findOrFail($id);
+    $tag->delete();
+
+    return redirect()->route('admin.tags.index')->with('success', 'Tag eliminato con successo.');
+}
+
 }
