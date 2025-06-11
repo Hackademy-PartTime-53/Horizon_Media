@@ -24,6 +24,7 @@ class ArticleSeeder extends Seeder
         'user_id'=>1,
         'category_id'=>6,
         'is_accepted'=>true,
+        'slug'=>"Intelligenza-artificiale-sul-futuro",
 
     ]);
 
@@ -36,6 +37,7 @@ class ArticleSeeder extends Seeder
         'user_id'=>1,
         'category_id'=>4,
         'is_accepted'=>true,
+        'slug'=> "Olimpiadi-Milano-2026",
 
     ]);
      $article3 = Article::create
@@ -47,6 +49,7 @@ class ArticleSeeder extends Seeder
         'user_id'=>1,
         'category_id'=>5,
         'is_accepted'=>true,
+        'slug'=> "Nuova-uscita-Avangers",
     ]);
      $article4 = Article::create
         ([
@@ -57,6 +60,7 @@ class ArticleSeeder extends Seeder
         'user_id'=>1,
         'category_id'=>1,
         'is_accepted'=>true,
+        'slug'=> "Italia-e-Danimarca-Migranti",
     ]);
      $article5 = Article::create
         ([
@@ -67,6 +71,7 @@ class ArticleSeeder extends Seeder
         'user_id'=>1,
         'category_id'=>3,
         'is_accepted'=>true,
+        'slug'=> "Tuttofood-2025",
     ]);
      $article6 = Article::create
         ([
@@ -77,6 +82,7 @@ class ArticleSeeder extends Seeder
         'user_id'=>1,
         'category_id'=>2,
         'is_accepted'=>true,
+        'slug'=> "I-dazi-di-Trump",
     ]);
     Tag::create ([
         'name' => 'Hashtag1'
