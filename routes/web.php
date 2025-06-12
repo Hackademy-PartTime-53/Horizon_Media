@@ -63,4 +63,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/articles/{article}/like', [LikeController::class, 'toggle'])->name('articles.like');
 });
 
+//ROTTA DOVE SIAMO
+
+Route::get('/dove-siamo', function () {
+    return view('dove-siamo');
+})->name('dove.siamo');
+
+
+
 

@@ -51,6 +51,7 @@
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
                 <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
+                 <li><a class="dropdown-item" href="{{ route('dove.siamo') }}">Dove siamo</a></li>
               </ul>
             </li>
           @endguest

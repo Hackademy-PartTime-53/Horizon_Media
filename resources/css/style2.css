@@ -277,3 +277,74 @@ body {
     }
 }
 /* BOTTONE MI PIACE */
+
+
+/* Paragrafo Dove Siamo*/
+.ParDove{
+    font-size: 3rem;
+}
+
+.ParHori{
+     font-size: 3rem;
+}
+
+
+/* CHAT ASSISTENZA */
+ .chatbox {
+            display: flex;
+            gap: 15px;
+            background: #e6f0ff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .chatbot-avatar img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+        }
+        .chat-questions {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+        .chat-question {
+            background: #fff;
+            padding: 12px 18px;
+            margin-bottom: 12px;
+            border-radius: 20px;
+            box-shadow: 0 1px 4px rgba(0, 123, 255, 0.3);
+            color: #007bff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.25s, color 0.25s;
+        }
+        .chat-question:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .chat-question.active {
+            background-color: #0056b3;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 86, 179, 0.7);
+        }
+        .chat-answer {
+            background-color: white;
+            min-height: 80px;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            border-left: 5px solid #007bff;
+            color: #333;
+        }
+        .chat-answer a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+
+
+

@@ -26,3 +26,8 @@ let osserva = new IntersectionObserver ( entries => {
 
 );
 osserva.observe(number3);
+
+
+
+
+
