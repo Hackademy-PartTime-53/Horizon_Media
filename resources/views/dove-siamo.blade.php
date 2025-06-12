@@ -1,7 +1,7 @@
 <x-main-layout>
     <x-slot name="title">Dove siamo</x-slot>
 
-    <div class="container">
+    <div class="container fade-in-section">
         <h1 class="text-center py-5 ParDove ">Dove siamo</h1>
 
         <div class="row align-items-center mb-5">
@@ -30,13 +30,13 @@
         </div>
     </div>
 
-    <div class="ContApp container my-5">
+    <div class="ContApp container my-5 fade-in-section">
         <div class="text-center p-4 shadow rounded" style="background-color: #f9f9f9;">
-            <h4 class="mb-4 mt-5" style="font-size: 3rem;">
+            <h4 class="mb-4 mt-5" style="font-size: 2rem;">
                 Inoltre, come ultima novità, scarica l’APP 
             </h4>
-            <p class="ParHori"><strong>"HorizonMedia"</strong></p>
-            <p style="font-size: 3rem">Per rimanere aggiornato con le nostre notizie</p>
+            <p class="ParHori" style="font-size: 1.5rem;"><strong>"HorizonMedia"</strong></p>
+            <p style="font-size: 1.5rem;">Per rimanere aggiornato con le nostre notizie</p>
 
             {{-- Wrapper flex per loghi e telefono --}}
             <div style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-top: 20px;">
@@ -45,10 +45,10 @@
                     <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store" style="width: 100%; height: auto;">
                 </a>
 
-                {{-- Immagine telefono al centro --}}
+                {{-- Immagine telefono al centro (più piccola) --}}
                 <img src="https://cdn-icons-png.flaticon.com/512/7344/7344131.png"
                     alt="Icona telefono"
-                    style="width: 300px; height: auto;">
+                    style="width: 200px; height: auto;">
 
                 {{-- Logo Apple Store a destra --}}
                 <a href="https://apps.apple.com/it/app/horizonmedia/id000000000" target="_blank" rel="noopener noreferrer" style="display: inline-block; width: 140px; height: auto;">
@@ -59,14 +59,14 @@
     </div>
 
     {{-- GIF spostata sotto tutto --}}
-    <div class="text-center mb-5" style="margin-top: 40px;">
+    <div class="text-center mb-5 fade-in-section" style="margin-top: 40px;">
         <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnNzOWg5NmMzNXJnaXg4eWU2d3JjaXUxeDN1YXA2ZTJ2N3N4ODFzOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/sRHX9qwNKQaQB48RAM/giphy.gif"
             alt="Omino che indica il mondo con giornale"
             style="max-width: 450px; height: auto; margin: 0 auto;">
     </div>
 
     {{-- Chatbot di assistenza stile chatbox con omino cuffie --}}
-    <div class="container my-5" style="max-width: 600px; margin: 0 auto;">
+    <div class="container my-5 fade-in-section" style="max-width: 600px; margin: 0 auto;">
         <h3 class="mb-4" style="font-weight: 700; font-family: Arial, sans-serif; color: #333;">Hai bisogno di assistenza? Scegli una domanda:</h3>
 
         <div class="chatbox">
@@ -74,19 +74,20 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/194/194938.png" alt="Omino con cuffie" />
             </div>
             <ul id="faq-list" class="chat-questions">
-                <li data-answer="Prova a resettare la tua password tramite la pagina 'Password dimenticata' o, nel caso di un nome utente, scrivi per avere un nuovo nome utente." class="chat-question">
+                <li class=" chat-question" data-answer="Prova a resettare la tua password tramite la pagina 'Password dimenticata' o, nel caso di un nome utente, scrivici per avere un nuovo nome utente.">
                     Non riesci ad accedere?
+                    <div class="answer" style="display: none; margin-top: 10px; color: white;"></div>
                 </li>
-                <li data-answer="Scrivi a <a href='mailto:horizonmedia@assistenza.com'>horizonmedia@assistenza.com</a>" class="chat-question">
+                <li class=" chat-question" data-answer="Scrivi a <a href='mailto:horizonmedia@assistenza.com' style='color: white; text-decoration: underline;'>horizonmedia@assistenza.com</a>">
                     Non riesci a contattarci telefonicamente? (Per urgenze)
+                    <div class="answer" style="display: none; margin-top: 10px; color: white;"></div>
                 </li>
-                <li data-answer="Scrivici pure su <a href='mailto:horizonmedia@mail.com'>horizonmedia@mail.com</a>" class="chat-question">
+                <li class=" chat-question" data-answer="Scrivici pure su <a href='mailto:horizonmedia@mail.com' style='color: white; text-decoration: underline;'>horizonmedia@mail.com</a>">
                     Hai altre domande da porci?
+                    <div class="answer" style="display: none; margin-top: 10px; color: white;"></div>
                 </li>
             </ul>
         </div>
-
-        <div id="faq-answer" class="chat-answer mt-4 p-3 shadow rounded"></div>
     </div>
 
     {{-- CSS Leaflet --}}
@@ -95,10 +96,9 @@
     {{-- JS Leaflet --}}
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     {{-- Inserisci il tuo file JS esterno, ad esempio assets/js/custom.js --}}
-        <script src="{{ asset('js/mappa.js') }}"></script>
+    <script src="{{ asset('js/mappa.js') }}"></script>
 
-
-    {{-- JS per mappa e chatbot --}}
+    {{-- JS per mappa, chatbot e fade-in --}}
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Leaflet map
@@ -119,20 +119,45 @@
 
             // Chatbot FAQ interaction
             const faqList = document.getElementById('faq-list');
-            const faqAnswer = document.getElementById('faq-answer');
 
-            faqList.addEventListener('click', function(event) {
-                const target = event.target;
-                if (target.classList.contains('chat-question')) {
-                    // Rimuovi classe active da tutti
-                    faqList.querySelectorAll('.chat-question').forEach(el => el.classList.remove('active'));
+            faqList.addEventListener('click', function (event) {
+                const target = event.target.closest('.chat-question');
+                if (!target) return;
 
-                    // Aggiungi active a quello cliccato
-                    target.classList.add('active');
+                // Nascondi tutte le risposte e rimuovi 'active'
+                faqList.querySelectorAll('.chat-question').forEach(el => {
+                    el.classList.remove('active');
+                    el.querySelector('.answer').style.display = 'none';
+                });
 
-                    // Imposta risposta
-                    faqAnswer.innerHTML = target.getAttribute('data-answer');
-                }
+                // Mostra risposta solo al cliccato
+                target.classList.add('active');
+                const answerDiv = target.querySelector('.answer');
+                answerDiv.innerHTML = target.getAttribute('data-answer');
+                answerDiv.style.display = 'block';
+            });
+
+            // Intersection Observer per fade-in
+            const faders = document.querySelectorAll('.fade-in-section');
+
+            const appearOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('is-visible');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
             });
         });
     </script>
