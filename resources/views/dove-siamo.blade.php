@@ -2,7 +2,7 @@
     <x-slot name="title">Dove siamo</x-slot>
 
     <div class="container fade-in-section">
-        <h1 class="text-center py-5 ParDove ">Dove siamo</h1>
+        <h1 class="text-center py-5 ParDove">Dove siamo</h1>
 
         <div class="row align-items-center mb-5">
             {{-- Testo a sinistra --}}
@@ -96,7 +96,7 @@
     {{-- JS Leaflet --}}
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     {{-- Inserisci il tuo file JS esterno, ad esempio assets/js/custom.js --}}
-    <script src="{{ asset('js/mappa.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 
     {{-- JS per mappa, chatbot e fade-in --}}
     <script>
