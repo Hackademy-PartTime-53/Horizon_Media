@@ -1,3 +1,39 @@
+/*  */
+/* Base uniforma dimensioni dei bottoni */
+.nyt-btn {
+  display: inline-flex;
+  width: 120px;           /* larghezza fissa */
+  height: 38px;           /* altezza fissa */
+  align-items: center;
+  justify-content: center;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;    /* evita il testo su più righe */
+}
+
+/* Colori già definiti in precedenza */
+.nyt-btn.btn-dark {
+  background-color: #111;
+  color: #fff;
+}
+.nyt-btn.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+.nyt-btn.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Hover (leggeri darken) */
+.nyt-btn.btn-dark:hover   { background-color: #333; }
+.nyt-btn.btn-secondary:hover { background-color: #5a6268; }
+.nyt-btn.btn-danger:hover { background-color: #c82333; }
+
+/*  */
 /* carosello */
 .carousel .card-title,
 .carousel .card-text {
