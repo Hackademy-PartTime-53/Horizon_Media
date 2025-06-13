@@ -25,7 +25,12 @@
           <a class="nav-link active" href="{{route('article.index')}}">Tutti i nostri articoli</a>
         </li>
 
-        <!-- Filtro categorie spostato accanto -->
+        <!-- Nuova voce: Dove siamo -->
+        <li class="nav-item d-flex align-items-center">
+          <a class="nav-link active" href="{{ route('dove.siamo') }}">Dove siamo</a>
+        </li>
+
+        <!-- Filtro categorie -->
         <li class="nav-item dropdown d-flex align-items-center">
           <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
             <i class="fa-solid fa-filter"></i>
@@ -38,7 +43,7 @@
         </li>
       </ul>
 
-      <!-- Form di ricerca + Dropdown utente spostato a destra -->
+      <!-- Form di ricerca + Dropdown utente -->
       <div class="d-flex flex-column flex-lg-row align-items-center justify-content-center gap-2 ms-lg-2">
 
         <!-- Dropdown Benvenuto / Utente -->
@@ -51,7 +56,6 @@
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
                 <li><a class="dropdown-item" href="{{ route('login') }}">Login</a></li>
-                 <li><a class="dropdown-item" href="{{ route('dove.siamo') }}">Dove siamo</a></li>
               </ul>
             </li>
           @endguest
