@@ -6,6 +6,7 @@ use App\Http\Controllers\LikeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\WriterController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ChatbotController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\RevisorController;
 
@@ -68,6 +69,8 @@ Route::middleware('auth')->group(function () {
 Route::get('/dove-siamo', function () {
     return view('dove-siamo');
 })->name('dove.siamo');
+
+
 
 
 
